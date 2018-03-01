@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrakeysFPSMultiplayer.Plugins", "BrakeysFPSMultiplayer.Plugins.csproj", "{91E1225D-91FE-C243-8B31-5E32E509B99D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrakeysFPSMultiplayer", "BrakeysFPSMultiplayer.csproj", "{BACBC7B5-91B0-AA27-6B47-A2EE6DF541F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrakeysFPSMultiplayer.Editor.Plugins", "BrakeysFPSMultiplayer.Editor.Plugins.csproj", "{0FB319B8-2DFC-28AE-80BF-2771119030BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91E1225D-91FE-C243-8B31-5E32E509B99D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E1225D-91FE-C243-8B31-5E32E509B99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E1225D-91FE-C243-8B31-5E32E509B99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E1225D-91FE-C243-8B31-5E32E509B99D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BACBC7B5-91B0-AA27-6B47-A2EE6DF541F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BACBC7B5-91B0-AA27-6B47-A2EE6DF541F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BACBC7B5-91B0-AA27-6B47-A2EE6DF541F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BACBC7B5-91B0-AA27-6B47-A2EE6DF541F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB319B8-2DFC-28AE-80BF-2771119030BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB319B8-2DFC-28AE-80BF-2771119030BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB319B8-2DFC-28AE-80BF-2771119030BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB319B8-2DFC-28AE-80BF-2771119030BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
