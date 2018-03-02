@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ab0fba247eed1ad40b76f98a8aafbba5
+timeCreated: 1519990153
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - muzzleFlash: {instanceID: 0}
+  - hitEffect: {fileID: 1713714818914660, guid: bee0fa78eef3b324ab6ae8952478c2ab,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

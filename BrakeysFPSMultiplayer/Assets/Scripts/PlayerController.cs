@@ -13,6 +13,15 @@ public class PlayerController : MonoBehaviour {
     private float lookSensitivity = 5f;
     [SerializeField]
     private float thrusterForce = 1000f;
+    [SerializeField]
+    private float thrusterFuelBurnSpeed = 1f;
+    [SerializeField]
+    private float thrusterFuelRegenSpeed = 0.3f;
+    private float thrusterFuelAmount = 1f;
+
+    [SerializeField]
+    private LayerMask environmentMask;
+
 
     [Header("Spring Settings")]
     [SerializeField]
@@ -35,6 +44,17 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        //setting target position for spring, set height of spring to new height
+        RaycastHit _hit;
+        if(Physics.Raycast(transform.position, Vector3.down, out _hit, 100f))
+        {
+            joint.targetPosition = new Vector3(0f, -_hit.point.y, 0f);
+        } else
+        {
+            joint.targetPosition = new Vector3(0f, 0f, 0f);
+        }
+
         //Calculate movement velocity as Vector3
         float _xMov = Input.GetAxis("Horizontal");
         float _zMov = Input.GetAxis("Vertical");
@@ -69,13 +89,22 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 _thrusterForce = Vector3.zero;
         //Apply thruster force
-        if (Input.GetButton("Jump")){
-            _thrusterForce = Vector3.up * thrusterForce;
-            SetJointSettings(0f);
+        if (Input.GetButton("Jump") && thrusterFuelAmount > 0){
+            thrusterFuelAmount -= thrusterFuelBurnSpeed * Time.deltaTime;
+
+            if(thrusterFuelAmount > 0.1f)
+            {
+                _thrusterForce = Vector3.up * thrusterForce;
+                SetJointSettings(0f);
+            }
+            
         } else
         {
+            thrusterFuelAmount += thrusterFuelRegenSpeed * Time.deltaTime;
             SetJointSettings(jointSpring);
         }
+
+        thrusterFuelAmount = Mathf.Clamp(thrusterFuelAmount, 0, 1);
 
         motor.ApplyThruster(_thrusterForce);
     }
@@ -83,5 +112,10 @@ public class PlayerController : MonoBehaviour {
     private void SetJointSettings(float _jointSpring)
     {
         joint.yDrive = new JointDrive {positionSpring = _jointSpring, maximumForce = jointMaxFloat };
+    }
+
+    public float GetThrusterFuelAmount()
+    {
+        return thrusterFuelAmount;
     }
 }
