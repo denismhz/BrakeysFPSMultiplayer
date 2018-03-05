@@ -44,6 +44,7 @@ public class PlayerShoot : NetworkBehaviour {
         {
             if (Input.GetButton("Fire1"))
             {
+                Debug.Log("ffffffffffffffff");
                 InvokeRepeating("Shoot", 0f , currentWeapon.fireRate);
             } else if (Input.GetButtonUp("Fire1"))
             {

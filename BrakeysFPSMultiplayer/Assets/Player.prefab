@@ -769,6 +769,11 @@ MonoBehaviour:
   speed: 5
   lookSensitivity: 5
   thrusterForce: 1200
+  thrusterFuelBurnSpeed: 1
+  thrusterFuelRegenSpeed: 0.3
+  environmentMask:
+    serializedVersion: 2
+    m_Bits: 0
   jointSpring: 15
   jointMaxFloat: 40
 --- !u!114 &114208861345729782
@@ -797,6 +802,11 @@ MonoBehaviour:
   disableOnDeath:
   - {fileID: 114716169480588872}
   - {fileID: 114015809224375854}
+  disableGameObjectsOnDeath:
+  - {fileID: 1103522130265770}
+  - {fileID: 1426098511560874}
+  deathEvent: {fileID: 1088754022025202, guid: 60734403ec703864c8987d75c66eeb32, type: 2}
+  spawnEvent: {fileID: 1929436780503900, guid: 25328a5b2032f8d4796a0414302a6d8d, type: 2}
 --- !u!114 &114581892114921914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -945,6 +955,7 @@ MonoBehaviour:
   playerGraphics: {fileID: 1103522130265770}
   playerUIPrefab: {fileID: 1637393928403294, guid: 582d62239fce97c4fa9e098ca6361e1c,
     type: 2}
+  playerUIinstance: {fileID: 0}
 --- !u!114 &114982042970687010
 MonoBehaviour:
   m_ObjectHideFlags: 1
