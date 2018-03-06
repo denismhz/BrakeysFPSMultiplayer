@@ -8,6 +8,9 @@ public class PlayerUI : MonoBehaviour {
     RectTransform thrusterFuelFill;
     private PlayerController controller;
 
+    [SerializeField]
+    private GameObject pauseMenu;
+
     public void SetController(PlayerController _controller)
     {
         controller = _controller;
@@ -17,13 +20,30 @@ public class PlayerUI : MonoBehaviour {
         thrusterFuelFill.localScale = new Vector3(1f, _amount, 1f);
     }
 
-	// Use this for initialization
-	void Start () {
-		
+    private void Awake()
+    {
+        PauseMenu.isOn = false;
+        pauseMenu.SetActive(false);
+    }
+
+    // Use this for initialization
+    void Start () {
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
         SetFuelAmount(controller.GetThrusterFuelAmount());
-	}
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePauseMenu();
+        }
+    }
+
+    void TogglePauseMenu()
+    {
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
+        PauseMenu.isOn = pauseMenu.activeSelf;
+    }
 }

@@ -45,6 +45,10 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        if (PauseMenu.isOn)
+        {
+            return;
+        }
         //setting target position for spring, set height of spring to new height
         RaycastHit _hit;
         if(Physics.Raycast(transform.position, Vector3.down, out _hit, 100f))

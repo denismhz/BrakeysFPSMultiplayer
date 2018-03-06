@@ -29,13 +29,18 @@ public class PlayerShoot : NetworkBehaviour {
 	void Update () {
         
         currentWeapon = weaponManager.GetCurrentWeapon();
+
+        if (PauseMenu.isOn)
+        {
+            return;
+        }
         if(currentWeapon == null)
         {
             return;
         }
         if(currentWeapon.fireRate <= 0)
         {
-            Debug.Log("Weapon found");
+            //Debug.Log("Weapon found");
             if (Input.GetButtonDown("Fire1"))
             {
                 Shoot();
